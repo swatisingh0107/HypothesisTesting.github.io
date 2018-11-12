@@ -1,3 +1,4 @@
+# Hypothesis Testing
 50 customers were randomly assigned to each group as follows:
 
 |Group|Discount Type|	Color
@@ -47,12 +48,6 @@ out in contrast to the background.
 We can run both ANOVA and LINEAR regression, but ANOVA is more suited for this specific use case as the predictor variable is continuous and the independent variables are 
 categorical in nature
 
----
-title: Hypothesis Testing
-  Author: Swati Singh
-    output: github_document
-    ---
-
 ```{r}
 library(dae)
 ## Loading required package: ggplot2
@@ -69,12 +64,13 @@ model2 <-lm (Amount.spent~factor(color),dataA)
 ```{r}
 anova(model1)
 ```
-
+![](https://github.com/swatisingh0107/HypothesisTesting.github.io/blob/master/images/ANOVA.PNG)
 ```{r}
 with(dataA, interaction.plot(discount,color,Amount.spent, ylab="Amount.Spent",
                              xlab="Discount",trace.label = "Color"))
 
 ```
+![](https://github.com/swatisingh0107/HypothesisTesting.github.io/blob/master/images/InteractionPlot.PNG)
 ### Inference from ANOVA:
 •	The main effect of color is significant on the outcome variable i.e. amount spent.\
 •	The main effect of discount is not significant on the outcome variable.\
@@ -88,6 +84,7 @@ with(dataA, interaction.plot(discount,color,Amount.spent, ylab="Amount.Spent",
 #Linear regression output for model1
 summary(model1)
 ```
+![](https://github.com/swatisingh0107/HypothesisTesting.github.io/blob/master/images/LMSummary.PNG)
 Inference:
 •	Linear model has similar inference about the main effects and interaction of color and discount.\
 •	The interaction of colorGreen:DiscountOff showed higher magnitude of influence on the total amount spent vs colorBlack:DiscountOff which is different for the ANOVA model.\
@@ -98,6 +95,7 @@ library("ggpubr")
 ggboxplot(dataA, x = "discount", y = "Amount.spent", color = "color",
           palette = c("black","green","red"))
 ```
+![](https://github.com/swatisingh0107/HypothesisTesting.github.io/blob/master/images/ggboxplot.PNG)
 ### Based on the analysis of the boxplot and anova summary
 
 •	The null hypothesis is rejected. The mean of all the groups is not the same.\
@@ -115,7 +113,7 @@ Color of presentation plays a major role in the amount spent by the customer. Th
 ```{r}
 TukeyHSD(aov(model1))
 ```
-
+![](https://github.com/swatisingh0107/HypothesisTesting.github.io/blob/master/images/Tukey.PNG)
 Based on Tukey analysis, we identified groups that perform marginally better than other groups. Group 3 and group 5 perform marginally better than other groups.\
 •	For red and black, promotion text has slightly significant influence.\
 •	Advertise 10% off in RED color to achieve the best sales.\
