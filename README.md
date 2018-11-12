@@ -114,6 +114,7 @@ Color of presentation plays a major role in the amount spent by the customer. Th
 TukeyHSD(aov(model1))
 ```
 ![](https://github.com/swatisingh0107/HypothesisTesting.github.io/blob/master/images/Tukey.PNG)
+
 Based on Tukey analysis, we identified groups that perform marginally better than other groups. Group 3 and group 5 perform marginally better than other groups.\
 •	For red and black, promotion text has slightly significant influence.\
 •	Advertise 10% off in RED color to achieve the best sales.\
