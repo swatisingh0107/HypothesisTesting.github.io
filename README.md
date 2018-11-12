@@ -51,8 +51,7 @@ categorical in nature
 ---
 title: Hypothesis Testing
   Author: Swati Singh
-html_document:
-        keep_md: true
+rmarkdown::github_document
         ---
 ```
 ```{r}
