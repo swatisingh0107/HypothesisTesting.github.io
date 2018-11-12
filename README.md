@@ -50,8 +50,8 @@ categorical in nature
 ---
 title: Hypothesis Testing
   Author: Swati Singh
-output: rmarkdown::github_document
-        ---
+    output: github_document
+    ---
 
 ```{r}
 library(dae)
